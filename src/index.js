@@ -42,7 +42,15 @@ function makeBeerDetailTag(beerObj) {
 
 function postBeerDetailTag(beerObj) {
     document.getElementById('beer-detail').innerHTML = '';
-    document.getElementById('beer-detail').innerHTML += makeBeerDetailTag(beerObj)
+    document.getElementById('beer-detail').innerHTML += makeBeerDetailTag(beerObj);
+    document.querySelector('textarea').addEventListener('keydown', e => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const beerDetail = e.target.value;
+            const beerId = e.target.parentElement.querySelector('button').dataset.beerId
+            updateBeerDetailInDb(beerId, beerDetail)
+        }
+    })
 }
 
 function editBeerListener() {
@@ -61,3 +69,4 @@ function updateBeerDetailInDb(beerId, beerDetail) {
     headers: {'Content-Type': 'application/json', Accept: 'application/json'},
     body: JSON.stringify({description: beerDetail})})
 }
+
