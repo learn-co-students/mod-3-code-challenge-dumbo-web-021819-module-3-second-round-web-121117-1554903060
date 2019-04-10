@@ -118,3 +118,5 @@ To update a beer you'll need to make a PATCH request
 You are free to solve this in any way you choose. It is not required that you have ES6 classes or use Object Orientation. We would recommend beginning with a straightforward functional implementation and refactoring to objects as needed.
 
 When you click on an individual `<li>` you will need some of way of determining which particular beer was clicked on. How will you solve this problem?
+
+
