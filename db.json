@@ -5,7 +5,7 @@
       "name": "Buzz",
       "tagline": "A Real Bitter Experience.",
       "first_brewed": "09/2007",
-      "description": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
+      "description": "A light and refreshing beer",
       "image_url": "https://images.punkapi.com/v2/keg.png",
       "food_pairing": [
         "Spicy chicken tikka masala",
@@ -13,7 +13,8 @@
         "Caramel toffee cake"
       ],
       "brewers_tips": "The earthy and floral aromas from the hops can be overpowering. Drop a little Cascade in at the end of the boil to lift the profile with a bit of citrus.",
-      "contributed_by": "Sam Mason <samjbmason>"
+      "contributed_by": "Sam Mason <samjbmason>",
+      "textToSave": "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once."
     },
     {
       "id": 3,
