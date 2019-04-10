@@ -3,7 +3,7 @@
 const listGroup = document.querySelector('.list-group')
 
 const createlistGroupItemHTML = (beer) => {
-  return `<li id="${beer.id}" class="list-group-item">${beer.name}</li>`
+  return `<font color="blue"><li id="${beer.id}" class="list-group-item">${beer.name}</li></font>`
 }
 
 
@@ -22,9 +22,10 @@ fetch('http://localhost:3000/beers')
 const beerDetailDiv = document.querySelector('#beer-detail')
 
 const createBeerDetail = (beerDetails) => {
-  return `<h1>${beerDetails.name}</h1>
+  return `
+          <font color="white"><h1>${beerDetails.name}</h1></font>
           <img src="${beerDetails.image_url}">
-          <h3>${beerDetails.tagline}</h3>
+          <font color="white"><h3>${beerDetails.tagline}</h3></font>
           <textarea id="${beerDetails.id}">${beerDetails.description}</textarea>
           <button type="submit" id="edit-beer" class="btn btn-info">
             Save
