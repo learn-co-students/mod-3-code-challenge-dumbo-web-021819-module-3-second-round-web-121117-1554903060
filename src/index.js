@@ -1,20 +1,24 @@
 document.addEventListener('DOMContentLoaded', e => {
     // document.addEventListener('click', e => console.log(e.target));
-    fetchAllBeers();
+    fetchAllBeers()
+    .then(makeAllBeersLi);
     listGroupClickListener();
     editBeerListener()
 });
 
 function fetchAllBeers() {
-    fetch('http://localhost:3000/beers')
+    return fetch('http://localhost:3000/beers')
     .then(r => r.json())
-    .then(beersArray => {
-        beersArray.forEach (beer => {
-            const listGroup = document.getElementById('list-group')
-            listGroup.innerHTML += `
-            <li class="list-group-item" data-beer-id="${beer.id}">${beer.name}</li>
-            `
-        })
+    .then(beersArray => beersArray)
+}
+
+function makeAllBeersLi(beersArray) {
+    beersArray.forEach (beerObj => {
+        const listGroup = document.getElementById('list-group')
+        listGroup.innerHTML += `
+        <li class="list-group-item" data-beer-id="${beerObj.id}">${beerObj.name}</li>
+        </div>
+        `
     })
 }
 
