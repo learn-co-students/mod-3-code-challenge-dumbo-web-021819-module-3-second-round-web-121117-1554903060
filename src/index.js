@@ -26,7 +26,16 @@ fetch("http://localhost:3000/beers")
 //Show details of specific beer on click
 beerListUl.addEventListener('click', (event) => {
   if (event.target.className = 'LI') {
+    //clear active selection in sidebar
+    let ulChildren = event.currentTarget.children;
+    for (let child of ulChildren) {
+      child.className = "list-group-item"
+    }
+    //set current clicked item to active
+    event.target.className = "list-group-item active"
+    //clear details to reload updated info
     beerDetailDiv.innerHTML = "";
+    //patch request
     fetch(`http://localhost:3000/beers/${event.target.dataset.id}`)
       .then((response) => {
         return response.json()
@@ -48,6 +57,7 @@ beerListUl.addEventListener('click', (event) => {
           }).then((response) => {
             return response.json()
           }).then((beer) => {
+            //update DOM to display current info in beer detail in real time
             beerDetailDiv.innerHTML = "";
             beerDetailDiv.innerHTML += createBeerInfo(beer)
           })
